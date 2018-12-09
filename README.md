@@ -1,5 +1,11 @@
 # Manage users feature
 
+Interface to manage a list of users
+
+**Expected files: CSV with coma separator**
+
+> final application link: https://delphinemillet.github.io/manage-users/
+
 ## Prerequisites
 
 ```
