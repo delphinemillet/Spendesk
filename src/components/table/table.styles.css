@@ -1,0 +1,21 @@
+.table-component {
+  padding: 0 1em;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.table-component thead {
+  background-color: #6e00ff;
+  color: #ffffff;
+}
+
+.table-component th {
+  text-transform: capitalize;
+  text-align: left;
+  padding: 1em;
+}
+
+.table-component td {
+  text-align: left;
+  padding: 1em;
+}

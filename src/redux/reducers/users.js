@@ -1,10 +1,22 @@
-import { IMPORT_USERS } from "../actions/users";
+import { SET_HEADER, SET_CONTENT } from "../actions/users";
 
-let users = (state = [], { type, payload }) => {
+const defaultState = {
+  header: [],
+  data: []
+};
+
+let users = (state = defaultState, { type, payload }) => {
   switch (type) {
-    case IMPORT_USERS:
+    case SET_HEADER:
       return {
-        ...state
+        ...state,
+        header: payload
+      };
+
+    case SET_CONTENT:
+      return {
+        ...state,
+        data: payload
       };
 
     default:
