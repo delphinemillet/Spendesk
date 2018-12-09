@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import Component from "./users";
 import { USERS_HEADERS } from "./users.constants";
-import { importUsers } from "../../redux/actions/users";
+import { importUsers, editUser } from "../../redux/actions/users";
 
 const mapStateToProps = state => {
   const { header, data } = state.users;
@@ -11,7 +11,9 @@ const mapStateToProps = state => {
   };
 };
 const mapDispatchToProps = dispatch => ({
-  onDrop: accepted => dispatch(importUsers(accepted))
+  onDrop: accepted => dispatch(importUsers(accepted)),
+  editUser: (event, row, index) =>
+    dispatch(editUser({ value: event.target.value, position: { row, index } }))
 });
 
 export default connect(

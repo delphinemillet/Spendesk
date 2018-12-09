@@ -18,6 +18,7 @@ export const importUsers = files => dispatch => {
     reader.onload = () => {
       const [header, ...content] = reader.result.split("\n");
       dispatch(setHeader(header.split(",")));
+      content.pop();
       const data = content.map(c => c.split(","));
       dispatch(setContent(data));
     };
@@ -27,4 +28,8 @@ export const importUsers = files => dispatch => {
   });
 };
 
-export const send = users => {};
+export const EDIT_USER = "EDIT_USER";
+export const editUser = ({ value, position }) => ({
+  type: EDIT_USER,
+  payload: { value, position }
+});

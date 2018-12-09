@@ -1,4 +1,4 @@
-import { SET_HEADER, SET_CONTENT } from "../actions/users";
+import { SET_HEADER, SET_CONTENT, EDIT_USER } from "../actions/users";
 
 const defaultState = {
   header: [],
@@ -18,6 +18,16 @@ let users = (state = defaultState, { type, payload }) => {
         ...state,
         data: payload
       };
+
+    case EDIT_USER: {
+      const { row, index } = payload.position;
+      const newState = state.data;
+      newState[row][index] = payload.value;
+      return {
+        ...state,
+        data: newState
+      };
+    }
 
     default:
       return state;

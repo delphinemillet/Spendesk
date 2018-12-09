@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Dropzone from "../../components/dropzone";
 import Table from "../../components/table";
 
-const Users = ({ header, data, onDrop }) => (
+const Users = ({ header, data, onDrop, editUser }) => (
   <React.Fragment>
     <h1>Invite your collaborators</h1>
 
@@ -11,7 +11,7 @@ const Users = ({ header, data, onDrop }) => (
       <p>Only CSV files will be accepted</p>
     </Dropzone>
 
-    <Table header={header} content={data} />
+    <Table header={header} content={data} onChange={editUser} />
   </React.Fragment>
 );
 
