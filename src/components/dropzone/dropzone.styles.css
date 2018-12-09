@@ -1,0 +1,12 @@
+.dropzone-component {
+  cursor: pointer;
+  margin: 2em auto;
+  padding: 1em 2em;
+  border: 2px dotted #4ec594;
+  border-radius: 0.5em;
+  max-width: 15em;
+}
+
+.dropzone-component:hover {
+  background-color: #88d8b7;
+}
